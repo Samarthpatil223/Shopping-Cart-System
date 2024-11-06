@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="outfit-custom">Shopping Cart</h1>
+
+        <div class="add-item">
+            <input type="number" id="itemCode" placeholder="Item Code" oninput="populateItemDetails()">
+            <input type="text" id="itemName" placeholder="Item Name" readonly>
+            <input type="number" id="itemPrice" placeholder="Price" min="0" readonly>
+            <input type="number" id="itemQuantity" placeholder="Quantity" min="1">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <div id="cart">
+            <h2 class="outfit-custom">Cart Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems"></tbody>
+            </table>
+            <h3 class="outfit-custom" id="totalPrice">Total: ₹0.00</h3>
+            <button onclick="toggleSortOrder()" class="sort">Sort by Price: Low to High</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
